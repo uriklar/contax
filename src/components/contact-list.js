@@ -15,6 +15,7 @@ const LoadingContainer = styled.div`
 const Container = styled.main`
   background-color: #d3d3d3;
   padding-bottom: 20px;
+  flex: 1;
 `;
 
 const InnerContainer = styled.div`
