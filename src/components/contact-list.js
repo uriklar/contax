@@ -1,7 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import loadingGif from "../images/loader.gif";
 
 import Contact from "./contact";
+
+const LoadingContainer = styled.div`
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+`;
 
 const Container = styled.main`
   background-color: #d3d3d3;
@@ -13,13 +22,20 @@ const InnerContainer = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 270px);
-  grid-gap: 1rem;
-  justify-content: space-around;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export default function ContactList({ contacts }) {
+  if (!contacts || !contacts.length) {
+    return (
+      <LoadingContainer>
+        <img src={loadingGif} alt="Loading" />
+      </LoadingContainer>
+    );
+  }
   return (
     <Container>
       <InnerContainer>

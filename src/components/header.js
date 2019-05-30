@@ -35,14 +35,18 @@ const SearchInput = styled.input`
   padding-left: 10px;
 `;
 
-export default function Header() {
+export default function Header({ query, setQuery }) {
   return (
     <Container>
       <InnerContainer>
         <h1>Contact List</h1>
 
         <SearchContainer>
-          <SearchInput placeholder="Search..." />
+          <SearchInput
+            placeholder="Search..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
           <SearchIcon alt="Search" src={searchIcon} />
         </SearchContainer>
       </InnerContainer>

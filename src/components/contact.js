@@ -18,6 +18,8 @@ const Container = styled.div`
   padding: 10px;
   position: relative;
   overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
   &:hover ${DetailsContainer} {
     transform: translateY(0);
